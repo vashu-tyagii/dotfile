@@ -242,7 +242,7 @@ list() {
     # ---  INTERACTIVE PART ---
     echo -n "Press Enter to clear screen and continue..."
     read  # Yeh line wait karegi jab tak tu Enter nahi dabata
-    cls   # Enter dabate hi screen saaf
+    clear   # Enter dabate hi screen saaf
 }
 
 #================= Custom Aliases and Functions =================#
