@@ -236,6 +236,11 @@ list() {
     echo -e "\033[1;34m-----------------------------------------------\033[0m"
     echo -e "\033[1;33mTip:\033[0m Always 'refresh' after 'config'!"
     echo -e "\033[1;34m===============================================\033[0m\n"
+
+    # ---  INTERACTIVE PART ---
+    echo -n "Press Enter to clear screen and continue..."
+    read  # Yeh line wait karegi jab tak tu Enter nahi dabata
+    cls   # Enter dabate hi screen saaf
 }
 
 #================= Custom Aliases and Functions =================#
