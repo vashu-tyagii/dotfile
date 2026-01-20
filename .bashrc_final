@@ -121,6 +121,8 @@ export PS1="\[\e[32m\]\u\[\e[m\]@linux: \[\e[33m\]\W\[\e[m\]  "
 
 #================= Custom Aliases and Functions =================#
 
+alias cls='clear' # Clear screen shortcut
+alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
 
 # Smart Toggle CD: VsCode in/out with one command
 
@@ -247,6 +249,3 @@ list() {
 
 #================= Custom Aliases and Functions =================#
 
-# Clear screen shortcut
-alias cls='clear' # Clear screen shortcut
-alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
