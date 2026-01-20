@@ -157,7 +157,7 @@ cd() {
 }
 
 # Aur bhi behtar version (jisme tu message de sake):
-gp() {
+gp() {  
     current_branch=$(git rev-parse --abbrev-ref HEAD)
     git add .
     
