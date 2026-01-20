@@ -168,14 +168,16 @@ gp() {
         git commit -m "$1"
     fi
 
-    echo -e "\033[1;32mPushing changes to branch: $current_branch...\033[0m"
     git push origin "$current_branch"
+
+    cls
 }
 
 
 # System Update Function
 sysupdate() {
     sudo apt update && sudo apt upgrade -y
+    cls
 }
 
 # Python Cache Cleaner
