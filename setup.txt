@@ -1,24 +1,31 @@
-=========================================
-VASHU'S LINUX DEPLOYMENT GUIDE (DNA)
-=========================================
+=====================================================
+            DOTFILES DEPLOYMENT GUIDE
+=====================================================
 
-1. REPO CLONE KARO:
-   -----------------
-   cd ~
-   git clone https://github.com/vashu-tyagii/dotfile.git ~/dotfiles
+STEP 1: REPO CLONE KARO
+-----------------------
+Naye laptop par sabse pehle apni repo clone karo:
+git clone <TERI_GITHUB_URL> ~/dotfile
 
-2. PURANI CONFIG SAAF KARO:
-   ------------------------
-   rm ~/.bashrc
+STEP 2: PURANA KACHRA SAAF KARO
+------------------------------
+Home folder ki default file hatao taaki link ban sake:
+rm ~/.bashrc
 
-3. PORTAL (SYMBOLIC LINK) BANAYEIN:
-   --------------------------------
-   ln -s ~/dotfiles/bashrc_main ~/.bashrc
+STEP 3: SYMLINK (PORTAL) BANAYEIN
+---------------------------------
+Is command se teri repo wali file system se jud jayegi:
+ln -s ~/dotfile/.bashrc_final ~/.bashrc
 
-4. SETTINGS APPLY KARO:
-   --------------------
-   source ~/.bashrc
+STEP 4: SETTINGS APPLY KARO
+---------------------------
+Terminal refresh karne ke liye:
+source ~/.bashrc
 
-=========================================
-MISSION ACCOMPLISHED! AB CODE KARO.
-=========================================
+STEP 5: VERIFICATION
+--------------------
+- 'cls' chala kar dekho (Screen saaf honi chahiye)
+- 'gp' chalao (Git automation check)
+- 'checkup' chalao (System health check)
+
+=====================================================
