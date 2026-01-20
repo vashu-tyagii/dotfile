@@ -226,3 +226,4 @@ list() {
 # Clear screen shortcut
 alias cls='clear' # Clear screen shortcut
 alias refresh='source ~/.bashrc' # Refresh bashrc
+alias edconf='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
