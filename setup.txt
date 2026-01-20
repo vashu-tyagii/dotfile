@@ -1,0 +1,24 @@
+=========================================
+VASHU'S LINUX DEPLOYMENT GUIDE (DNA)
+=========================================
+
+1. REPO CLONE KARO:
+   -----------------
+   cd ~
+   git clone https://github.com/vashu-tyagii/dotfile.git ~/dotfiles
+
+2. PURANI CONFIG SAAF KARO:
+   ------------------------
+   rm ~/.bashrc
+
+3. PORTAL (SYMBOLIC LINK) BANAYEIN:
+   --------------------------------
+   ln -s ~/dotfiles/bashrc_main ~/.bashrc
+
+4. SETTINGS APPLY KARO:
+   --------------------
+   source ~/.bashrc
+
+=========================================
+MISSION ACCOMPLISHED! AB CODE KARO.
+=========================================
