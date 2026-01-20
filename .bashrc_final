@@ -211,7 +211,8 @@ list() {
     echo -e "\033[1;33mmkcd [dir]\033[0m\t: Folder banao aur turant andar jao"
     echo -e "\033[1;33mpyclean\033[0m  \t: Python ka kachra (.pyc/cache) saaf kare"
     echo -e "\033[1;33msysupdate\033[0m\t: Poora Linux system update kare"
-    
+    echo -e "\033[1;33mrefresh\033[0m\t: Bashrc refresh kare"
+
     # System Info
     echo -e "\033[1;32mcheckup\033[0m  \t: System health aur stats dekho"
     
@@ -224,3 +225,4 @@ list() {
 
 # Clear screen shortcut
 alias cls='clear' # Clear screen shortcut
+alias refresh='source ~/.bashrc' # Refresh bashrc
