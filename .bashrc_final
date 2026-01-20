@@ -202,6 +202,7 @@ refresh_config() {
     echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
     cd ~/dotfile && gp "modified"
     cd - > /dev/null
+    cls
 }
 
 # 2. Ab is function ko alias do (Iska naam alag rakho ya upar wala alias delete karo)
