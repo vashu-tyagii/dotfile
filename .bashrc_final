@@ -168,16 +168,13 @@ gp() {
         git commit -m "$1"
     fi
 
-    git push origin "$current_branch"
-
-    cls
+    git push origin "$current_branch" && cls && echo "Push Successful!"
 }
 
 
 # System Update Function
 sysupdate() {
-    sudo apt update && sudo apt upgrade -y
-    cls
+   sudo apt update && sudo apt upgrade -y && cls && echo "System Updated Successfully!"
 }
 
 # Python Cache Cleaner
