@@ -197,20 +197,7 @@ checkup() {
     df -h | grep '^/dev/'
 }
 
-refresh() {
-    # 1. File ko source karo
-    source ~/.bashrc
-    echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
 
-    # 2. Dotfile directory mein jao aur push karo
-    # Yahan path wahi rakhna jo tumhari repo ka hai
-    cd ~/dotfile && gp "modified"
-    
-    # 3. Wapas purani directory mein aa jao jahan tum kaam kar rahe the
-    cd - > /dev/null
-    
-    echo -e "\033[1;34mSettings synced to GitHub with msg: 'modified'\033[0m"
-}
 
 list() {
     echo -e "\n\033[1;34m===============================================\033[0m"
