@@ -197,15 +197,15 @@ checkup() {
     df -h | grep '^/dev/'
 }
 
-refresh() {
+refresh_config() {
     source ~/.bashrc
     echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
-    
-    # Path verify karo: ~/dotfile/ sahi hai na?
     cd ~/dotfile && gp "modified"
     cd - > /dev/null
-    
 }
+
+# 2. Ab is function ko alias do (Iska naam alag rakho ya upar wala alias delete karo)
+alias refresh='refresh_config'
 
 list() {
     echo -e "\n\033[1;34m===============================================\033[0m"
