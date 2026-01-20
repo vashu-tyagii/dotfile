@@ -204,8 +204,7 @@ refresh() {
     # Path verify karo: ~/dotfile/ sahi hai na?
     cd ~/dotfile && gp "modified"
     cd - > /dev/null
-
-    cls
+    
 }
 
 list() {
