@@ -197,7 +197,16 @@ checkup() {
     df -h | grep '^/dev/'
 }
 
+refresh() {
+    source ~/.bashrc
+    echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
+    
+    # Path verify karo: ~/dotfile/ sahi hai na?
+    cd ~/dotfile && gp "modified"
+    cd - > /dev/null
 
+    cls
+}
 
 list() {
     echo -e "\n\033[1;34m===============================================\033[0m"
