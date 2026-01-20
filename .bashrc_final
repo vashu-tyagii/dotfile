@@ -170,19 +170,23 @@ gp() {
         git commit -m "$1"
     fi
 
-    git push origin "$current_branch" && cls && echo "Push Successful!"
+    git push origin "$current_branch" && cls &&  echo -e "\033[1;34mPush Sucessfully!\033[0m"
 }
 
 
 # System Update Function
 sysupdate() {
-   sudo apt update && sudo apt upgrade -y && cls && echo "System Updated Successfully!"
+   sudo apt update && sudo apt upgrade -y && cls &&  echo -e "\033[1;34mSystem Updated Successfully!\033[0m"
+
+    # ---  INTERACTIVE PART ---
+    echo -n "Press Enter to clear screen and continue..."
+    read  # Yeh line wait karegi jab tak tu Enter nahi dabata
+    cls   # Enter dabate hi screen saaf
 }
 
 # Python Cache Cleaner
 pyclean() {
     find . -type d -name "__pycache__" -exec rm -rf {} +
-    echo "🧹 Python cache cleaned!"
 }
 
 # Make Directory and Change into it
@@ -196,6 +200,11 @@ checkup() {
     free -h
     echo "--- Disk Space ---"
     df -h | grep '^/dev/'
+
+    # ---  INTERACTIVE PART ---
+    echo -n "Press Enter to clear screen and continue..."
+    read  # Yeh line wait karegi jab tak tu Enter nahi dabata
+    cls   # Enter dabate hi screen saaf
 }
 
 refresh() {
