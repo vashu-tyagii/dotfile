@@ -199,25 +199,29 @@ checkup() {
 
 list() {
     echo -e "\n\033[1;34m===============================================\033[0m"
-    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v3.0)       \033[0m"
+    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v4.0)       \033[0m"
     echo -e "\033[1;34m===============================================\033[0m"
     
-    # Core Commands
-    echo -e "\033[1;32mcls\033[0m      \t: Screen saaf kare"
-    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Git Push (Auto-branch)"
-    echo -e "\033[1;32mlist\033[0m     \t: Yeh manual kholne ke liye"
+    # Management & Workflow
+    echo -e "\033[1;35m[WORKFLOW]\033[0m"
+    echo -e "\033[1;32mconfig\033[0m   \t: Edit .bashrc in VS Code"
+    echo -e "\033[1;32mrefresh\033[0m  \t: Apply new config changes"
+    echo -e "\033[1;32mlist\033[0m     \t: Show this manual"
     
-    # New Power Tools
-    echo -e "\033[1;33mmkcd [dir]\033[0m\t: Folder banao aur turant andar jao"
-    echo -e "\033[1;33mpyclean\033[0m  \t: Python ka kachra (.pyc/cache) saaf kare"
-    echo -e "\033[1;33msysupdate\033[0m\t: Poora Linux system update kare"
-    echo -e "\033[1;33mrefresh\033[0m\t: Bashrc refresh kare"
-
-    # System Info
-    echo -e "\033[1;32mcheckup\033[0m  \t: System health aur stats dekho"
+    echo -e "\n\033[1;35m[GIT & CLOUD]\033[0m"
+    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Push (Auto-detects branch)"
+    
+    echo -e "\n\033[1;35m[POWER TOOLS]\033[0m"
+    echo -e "\033[1;33mmkcd [dir]\033[0m\t: Create & Enter directory"
+    echo -e "\033[1;33mpyclean\033[0m  \t: Clean Python cache files"
+    echo -e "\033[1;33msysupdate\033[0m\t: Full System Update"
+    
+    echo -e "\n\033[1;35m[UTILITIES]\033[0m"
+    echo -e "\033[1;32mcls\033[0m      \t: Clear Terminal screen"
+    echo -e "\033[1;32mcheckup\033[0m  \t: System health stats"
     
     echo -e "\033[1;34m-----------------------------------------------\033[0m"
-    echo -e "\033[1;35mStatus:\033[0m All systems operational. Build something great!"
+    echo -e "\033[1;33mTip:\033[0m Always 'refresh' after 'config'!"
     echo -e "\033[1;34m===============================================\033[0m\n"
 }
 
@@ -225,5 +229,5 @@ list() {
 
 # Clear screen shortcut
 alias cls='clear' # Clear screen shortcut
-alias refresh='source ~/.bashrc' # Refresh bashrc
-alias edconf='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
+alias refresh='source ~/.bashrc && echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"' # Refresh bashrc
+alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
