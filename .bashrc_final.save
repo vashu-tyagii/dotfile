@@ -158,20 +158,21 @@ cd() {
 
 # Aur bhi behtar version (jisme tu message de sake):
 gp() {
+    # 1. Current branch ka naam nikaalo
     current_branch=$(git rev-parse --abbrev-ref HEAD)
-    git add .
     
-    # Agar tumne koi message nahi diya, toh ye auto-message use karega
+    # 2. Add aur Commit (Message ke saath ya default)
+    git add .
     if [ -z "$1" ]; then
-        git commit -m "Auto-update from branch: $current_branch"
+        git commit -m "Auto sen: automatic  from $current_branch"
     else
         git commit -m "$1"
     fi
 
-    echo -e "\033[1;32mPushing changes to branch: $current_branch...\033[0m"
+    # 3. Use current branch to push
+    echo -e "\033[1;33mPushing to: $current_branch...\033[0m"
     git push origin "$current_branch"
 }
-
 
 # System Update Function
 sysupdate() {
@@ -195,23 +196,6 @@ checkup() {
     free -h
     echo "--- Disk Space ---"
     df -h | grep '^/dev/'
-}
-
-list() {
-    echo -e "\n\033[1;34m===============================================\033[0m"
-    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v2.0)       \033[0m"
-    echo -e "\033[1;34m===============================================\033[0m"
-    
-    # Format: Command Name [Tab Space] : Description
-    echo -e "\033[1;32mcls\033[0m      \t: Screen saaf kare (Windows style)"
-    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Push (Auto-detects branch)"
-    echo -e "\033[1;32mcheckup\033[0m  \t: System health aur stats dekho"
-    echo -e "\033[1;32mvenv\033[0m     \t: Auto-activate .venv (Recursive)"
-    echo -e "\033[1;32mlist\033[0m     \t: Yeh wala manual kholne ke liye"
-    
-    echo -e "\033[1;34m-----------------------------------------------\033[0m"
-    echo -e "\033[1;33mTip:\033[0m Use 'gp \"message\"' for custom commit text."
-    echo -e "\033[1;34m===============================================\033[0m\n"
 }
 
 #================= Custom Aliases and Functions =================#
