@@ -209,7 +209,6 @@ checkup() {
 
 refresh() {
     source ~/.bashrc
-    echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
     
     # Git sync
     cd ~/dotfile && gp "modified"
