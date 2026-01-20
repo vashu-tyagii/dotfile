@@ -170,9 +170,7 @@ gp() {
         git commit -m "$1"
     fi
 
-    cls
-    
-    git push origin "$current_branch" && echo "Push Successful!"
+    git push origin "$current_branch" && cls && echo "Push Successful!"
 }
 
 
