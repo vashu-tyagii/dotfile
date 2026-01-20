@@ -225,4 +225,4 @@ list() {
 
 # Clear screen shortcut
 alias cls='clear' # Clear screen shortcut
-alias Refresh='source ~/.bashrc' # Refresh bashrc
+alias refresh='source ~/.bashrc' # Refresh bashrc
