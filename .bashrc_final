@@ -199,18 +199,24 @@ checkup() {
 
 list() {
     echo -e "\n\033[1;34m===============================================\033[0m"
-    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v2.0)       \033[0m"
+    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v3.0)       \033[0m"
     echo -e "\033[1;34m===============================================\033[0m"
     
-    # Format: Command Name [Tab Space] : Description
-    echo -e "\033[1;32mcls\033[0m      \t: Screen saaf kare (Windows style)"
-    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Push (Auto-detects branch)"
+    # Core Commands
+    echo -e "\033[1;32mcls\033[0m      \t: Screen saaf kare"
+    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Git Push (Auto-branch)"
+    echo -e "\033[1;32mlist\033[0m     \t: Yeh manual kholne ke liye"
+    
+    # New Power Tools
+    echo -e "\033[1;33mmkcd [dir]\033[0m\t: Folder banao aur turant andar jao"
+    echo -e "\033[1;33mpyclean\033[0m  \t: Python ka kachra (.pyc/cache) saaf kare"
+    echo -e "\033[1;33msysupdate\033[0m\t: Poora Linux system update kare"
+    
+    # System Info
     echo -e "\033[1;32mcheckup\033[0m  \t: System health aur stats dekho"
-    echo -e "\033[1;32mvenv\033[0m     \t: Auto-activate .venv (Recursive)"
-    echo -e "\033[1;32mlist\033[0m     \t: Yeh wala manual kholne ke liye"
     
     echo -e "\033[1;34m-----------------------------------------------\033[0m"
-    echo -e "\033[1;33mTip:\033[0m Use 'gp \"message\"' for custom commit text."
+    echo -e "\033[1;35mStatus:\033[0m All systems operational. Build something great!"
     echo -e "\033[1;34m===============================================\033[0m\n"
 }
 
