@@ -197,7 +197,7 @@ checkup() {
     df -h | grep '^/dev/'
 }
 
-refresh_config() {
+refresh() {
     source ~/.bashrc
     echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
     cd ~/dotfile && gp "modified"
