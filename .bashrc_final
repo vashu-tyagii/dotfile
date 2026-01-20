@@ -198,7 +198,7 @@ checkup() {
     df -h | grep '^/dev/'
 }
 
-refresh_logic() {
+refresh() {
     source ~/.bashrc
     echo -e "\033[1;32mConfig Reloaded! 🚀\033[0m"
     
@@ -250,4 +250,3 @@ list() {
 # Clear screen shortcut
 alias cls='clear' # Clear screen shortcut
 alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
-alias refresh='refresh_logic' # Apply new config changes
