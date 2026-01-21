@@ -130,6 +130,9 @@ alias up_pip='pip3 install -U'     # -U is short for --upgrade
 alias re_pip='pip3 install -r requirements.txt' 
 alias un_pip='pip3 uninstall -y -r requirements.txt' # Fixed name to 'un' for uninstall
 alias venv='python3 -m venv .venv'
+alias gs='git status'
+alias gl='git log --oneline --graph --all --decorate'
+
 # Smart Toggle CD: VsCode in/out with one command
 
 cd() {
@@ -224,38 +227,68 @@ refresh() {
     echo -e "\033[1;34mEverything Synced and Cleaned!\033[0m"
 }
 
+# ==========================================
+#           MASTER MENU SYSTEM
+# ==========================================
 
+# 1. Main Master List
 list() {
-    echo -e "\n\033[1;34m===============================================\033[0m"
-    echo -e "\033[1;36m       🚀 VASHU'S COMMAND CENTER (v4.0)       \033[0m"
-    echo -e "\033[1;34m===============================================\033[0m"
-    
-    # Management & Workflow
-    echo -e "\033[1;35m[WORKFLOW]\033[0m"
-    echo -e "\033[1;32mconfig\033[0m   \t: Edit .bashrc in VS Code"
-    echo -e "\033[1;32mrefresh\033[0m  \t: Apply new config changes"
-    echo -e "\033[1;32mlist\033[0m     \t: Show this manual"
-    
-    echo -e "\n\033[1;35m[GIT & CLOUD]\033[0m"
-    echo -e "\033[1;32mgp [msg]\033[0m \t: Smart Push (Auto-detects branch)"
-    
-    echo -e "\n\033[1;35m[POWER TOOLS]\033[0m"
-    echo -e "\033[1;33mmkcd [dir]\033[0m\t: Create & Enter directory"
-    echo -e "\033[1;33mpyclean\033[0m  \t: Clean Python cache files"
-    echo -e "\033[1;33msysupdate\033[0m\t: Full System Update"
-    
-    echo -e "\n\033[1;35m[UTILITIES]\033[0m"
-    echo -e "\033[1;32mcls\033[0m      \t: Clear Terminal screen"
-    echo -e "\033[1;32mcheckup\033[0m  \t: System health stats"
-    
-    echo -e "\033[1;34m-----------------------------------------------\033[0m"
-    echo -e "\033[1;33mTip:\033[0m Always 'refresh' after 'config'!"
-    echo -e "\033[1;34m===============================================\033[0m\n"
+    clear
+    echo -e "\033[1;33m==============================================="
+    echo "          🚀 TERMINAL MASTER MENU             "
+    echo "==============================================="
+    echo -e "\033[0m"
+    echo -e "\033[1;32m  piplist  \033[0m : Python & Pip Shortcuts"
+    echo -e "\033[1;32m  gitlist  \033[0m : Git & GitHub Automation"
+    echo -e "\033[1;32m  syslist  \033[0m : System & Config Tools"
+    echo ""
+    echo -e "\033[1;33m===============================================\033[0m"
+}
 
-    # ---  INTERACTIVE PART ---
-    echo -n "Press Enter to clear screen and continue..."
-    read  # Yeh line wait karegi jab tak tu Enter nahi dabata
-    cls   # Enter dabate hi screen saaf
+# 2. Python & Pip List (Act/Deact removed)
+piplist() {
+    clear
+    echo -e "\033[1;35m📦 PYTHON & PIP DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  py       : Run Python3"
+    echo "  in_pip   : Install package"
+    echo "  up_pip   : Upgrade package"
+    echo "  re_pip   : Install from requirements.txt"
+    echo "  un_pip   : Uninstall package"
+    echo "  venv     : Create Virtual Env (.venv)"
+    echo "-----------------------------------------------"
+    echo -n "\n Enter to return to Master Menu..."
+    read && list
+}
+
+# 3. Git & GitHub List
+gitlist() {
+    clear
+    echo -e "\033[1;36m📂 GIT & GITHUB DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  gs       : Git Status"
+    echo "  gp       : Git Push (Auto-commit)"
+    echo "  gl       : Git Log (Graph view)"
+    echo "-----------------------------------------------"
+    echo -n "\n Press Enter to return to Master Menu..."
+    read && list
+}
+
+# 4. System List
+syslist() {
+    clear
+    echo -e "\033[1;32m🖥️  SYSTEM DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  cls       : Clear Screen"
+    echo "  checkup   : Check CPU, RAM & Disk"
+    echo "  pyclean   : Clean Python __pycache__"
+    echo "  mkcd      : Make Directory & Change into it"
+    echo "  config    : Edit .bashrc in VSCode"
+    echo "  refresh   : Source .bashrc & Sync"
+    echo "  sysupdate : System Update (sudo apt)"
+    echo "-----------------------------------------------"
+    echo -n "\n Press Enter to return to Master Menu..."
+    read && list
 }
 
 #================= Custom Aliases and Functions =================#
