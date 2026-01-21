@@ -227,11 +227,10 @@ refresh() {
     echo -e "\033[1;34mEverything Synced and Cleaned!\033[0m"
 }
 # Helper function to print centered text
-center_print() {
+center_block() {
     local term_width=$(tput cols)
-    local text="$1"
-    local padding=$(( (term_width - 47) / 2 )) # 47 is the width of your border
-    printf "%${padding}s%s\n" "" "$text"
+    local padding=$(( (term_width - 45) / 2 )) # Fixed block width 45
+    printf "%${padding}s%s\n" "" "$1"
 }
 
 # 1. Main Master List
