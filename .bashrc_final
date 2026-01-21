@@ -123,7 +123,13 @@ export PS1="\[\e[32m\]\u\[\e[m\]@linux: \[\e[33m\]\W\[\e[m\]  "
 
 alias cls='clear' # Clear screen shortcut
 alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
-
+alias py='python3'
+alias pip='pip3'
+alias in_pip='pip3 install'        # Example: in_pip requests
+alias up_pip='pip3 install -U'     # -U is short for --upgrade
+alias re_pip='pip3 install -r requirements.txt' 
+alias un_pip='pip3 uninstall -y -r requirements.txt' # Fixed name to 'un' for uninstall
+alias venv='python3 -m venv .venv'
 # Smart Toggle CD: VsCode in/out with one command
 
 cd() {
@@ -154,7 +160,6 @@ cd() {
     # 3. Agar kahin bhi .venv nahi mila, toh deactivate karo
     if [ -n "$VIRTUAL_ENV" ]; then
         deactivate
-        echo "💀 Venv Deactivated"
     fi
 }
 
