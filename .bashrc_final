@@ -229,7 +229,7 @@ refresh() {
 # Helper function to print centered text
 center_block() {
     local term_width=$(tput cols)
-    local padding=$(( (term_width - 45) / 2 )) # Fixed block width 45
+    local padding=$(( (term_width - 15) / 2 )) # Fixed block width 45
     printf "%${padding}s%s\n" "" "$1"
 }
 
