@@ -226,90 +226,71 @@ refresh() {
     cls
     echo -e "\033[1;34mEverything Synced and Cleaned!\033[0m"
 }
-# Helper function to print centered text
-center_block() {
-    local term_width=$(tput cols)
-    local padding=$(( (term_width - 15) / 2 )) # Fixed block width 45
-    printf "%${padding}s%s\n" "" "$1"
-}
+
+
+# ==========================================
+#           MASTER MENU SYSTEM
+# ==========================================
 
 # 1. Main Master List
 list() {
     clear
-    printf '\n%.0s' {1..10} # 10 line gap
-    echo -e "\033[1;33m"
-    center_print "==============================================="
-    center_print "          🚀 TERMINAL MASTER MENU             "
-    center_print "==============================================="
+    echo -e "\033[1;33m==============================================="
+    echo "          🚀 TERMINAL MASTER MENU             "
+    echo "==============================================="
     echo -e "\033[0m"
-    center_print "  piplist   : Python & Pip Shortcuts           "
-    center_print "  gitlist   : Git & GitHub Automation          "
-    center_print "  syslist   : System & Config Tools            "
+    echo -e "\033[1;32m  piplist  \033[0m : Python & Pip Shortcuts"
+    echo -e "\033[1;32m  gitlist  \033[0m : Git & GitHub Automation"
+    echo -e "\033[1;32m  syslist  \033[0m : System & Config Tools"
     echo ""
-    echo -e "\033[1;33m"
-    center_print "==============================================="
-    echo -e "\033[0m"
+    echo -e "\033[1;33m===============================================\033[0m"
 }
 
-# 2. Python & Pip List
+# 2. Python & Pip List (Act/Deact removed)
 piplist() {
     clear
-    printf '\n%.0s' {1..10}
-    echo -e "\033[1;35m"
-    center_print "📦 PYTHON & PIP DASHBOARD                      "
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print "  py       : Run Python3                       "
-    center_print "  in_pip   : Install package                   "
-    center_print "  up_pip   : Upgrade package                   "
-    center_print "  re_pip   : Install from requirements.txt     "
-    center_print "  un_pip   : Uninstall package                 "
-    center_print "  venv     : Create Virtual Env (.venv)        "
-    echo -e "\033[1;35m"
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print " Enter to return to Master Menu...             "
+    echo -e "\033[1;35m📦 PYTHON & PIP DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  py       : Run Python3"
+    echo "  in_pip   : Install package"
+    echo "  up_pip   : Upgrade package"
+    echo "  re_pip   : Install from requirements.txt"
+    echo "  un_pip   : Uninstall package"
+    echo "  venv     : Create Virtual Env (.venv)"
+    echo "-----------------------------------------------"
+    echo -n "\n Enter to return to Master Menu..."
     read && list
 }
 
 # 3. Git & GitHub List
 gitlist() {
     clear
-    printf '\n%.0s' {1..10}
-    echo -e "\033[1;36m"
-    center_print "📂 GIT & GITHUB DASHBOARD                      "
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print "  gs       : Git Status                        "
-    center_print "  gp       : Git Push (Auto-commit)            "
-    center_print "  gl       : Git Log (Graph view)              "
-    echo -e "\033[1;36m"
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print " Press Enter to return to Master Menu...       "
+    echo -e "\033[1;36m📂 GIT & GITHUB DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  gs       : Git Status"
+    echo "  gp       : Git Push (Auto-commit)"
+    echo "  gl       : Git Log (Graph view)"
+    echo "-----------------------------------------------"
+    echo -n "\n Press Enter to return to Master Menu..."
     read && list
 }
 
 # 4. System List
 syslist() {
     clear
-    printf '\n%.0s' {1..10}
-    echo -e "\033[1;32m"
-    center_print "🖥️  SYSTEM DASHBOARD                            "
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print "  cls      : Clear Screen                      "
-    center_print "  checkup  : Check CPU, RAM & Disk             "
-    center_print "  pyclean  : Clean Python __pycache__          "
-    center_print "  mkcd     : Make Directory & Change into it   "
-    center_print "  config   : Edit .bashrc in VSCode            "
-    center_print "  refresh  : Source .bashrc & Sync             "
-    center_print "  sysupdate: System Update (sudo apt)          "
-    echo -e "\033[1;32m"
-    center_print "-----------------------------------------------"
-    echo -e "\033[0m"
-    center_print " Press Enter to return to Master Menu...       "
+    echo -e "\033[1;32m🖥️  SYSTEM DASHBOARD\033[0m"
+    echo "-----------------------------------------------"
+    echo "  cls       : Clear Screen"
+    echo "  checkup   : Check CPU, RAM & Disk"
+    echo "  pyclean   : Clean Python __pycache__"
+    echo "  mkcd      : Make Directory & Change into it"
+    echo "  config    : Edit .bashrc in VSCode"
+    echo "  refresh   : Source .bashrc & Sync"
+    echo "  sysupdate : System Update (sudo apt)"
+    echo "-----------------------------------------------"
+    echo -n "\n Press Enter to return to Master Menu..."
     read && list
 }
+
 #================= Custom Aliases and Functions =================#
 
