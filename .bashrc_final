@@ -181,9 +181,15 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@" && cls
+        # Case 2: Folder path ke saath
+        # Hum pehle directory change karenge, aur agar success hui tabhi clear karenge
+        if builtin cd "$@"; then
+            clear
+        else
+            echo -e "${RED}❌ Error: Directory nahi mili!${NC}"
+        fi
     fi
-
+    
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
     local dir="$PWD"
@@ -200,6 +206,18 @@ cd() {
     # 3. Agar kahin bhi .venv nahi mila, toh deactivate karo
     if [ -n "$VIRTUAL_ENV" ]; then
         deactivate
+    fi
+}
+
+# Uninstall package
+un_pip() {
+    echo -e "${CYAN}🗑️  Uninstalling: ${YELLOW}$*${NC}..."
+    if pip3 uninstall -y "$@"; then
+        clear
+        echo -e "${GREEN}✅ Uninstall Finished & Terminal Cleared!${NC}"
+        sleep 2
+    else
+        echo -e "${RED}❌ Uninstall Failed!${NC}"
     fi
 }
 
