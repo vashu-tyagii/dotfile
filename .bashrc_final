@@ -181,9 +181,9 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@ && cls" 
+        builtin cd "$@" 
     fi
-
+    cls 
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
     local dir="$PWD"
