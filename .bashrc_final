@@ -181,7 +181,7 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$1" && cls && clear 
+        builtin cd "$1" && cls 
     fi
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
