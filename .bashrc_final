@@ -181,7 +181,7 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@" && clsre 
+        builtin cd "$@ && cls" 
     fi
 
     # 2. Smart Recursive Venv Activation
