@@ -172,11 +172,6 @@ re_pip() {
     fi
 }
 
-# cd ki jagah 'go' use karke dekho
-go() {
-    builtin cd "$@" && clear && echo "Target: $PWD"
-}
-
 cd() {
     # 1. Smart Toggle Logic (VsCode in/out)
     if [ -z "$1" ]; then
@@ -185,7 +180,9 @@ cd() {
         else
             builtin cd ~/VsCode && cls
         fi
-
+    else
+        builtin cd "$@" && clsre 
+    fi
 
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
@@ -195,6 +192,7 @@ cd() {
             if [ "$VIRTUAL_ENV" != "$dir/.venv" ]; then
                 source "$dir/.venv/bin/activate"
             fi
+            clear
             return # Venv mil gaya, kaam khatam
         fi
         dir=$(dirname "$dir")
@@ -204,6 +202,8 @@ cd() {
     if [ -n "$VIRTUAL_ENV" ]; then
         deactivate
     fi
+    
+    clear
 }
 
 # Aur bhi behtar version (jisme tu message de sake):
