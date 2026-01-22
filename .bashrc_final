@@ -179,7 +179,7 @@ gp() {
         git commit -m "$1"
     fi
 
-    git push origin "$current_branch" && cls &&  echo -e "\033[1;34mPush Sucessfully!\033[0m"
+    git push origin "$current_branch" && cls
 }
 
 
@@ -225,7 +225,6 @@ refresh() {
     
     # Screen saaf
     cls
-    echo -e "\033[1;34mEverything Synced and Cleaned!\033[0m"
 }
 
 
