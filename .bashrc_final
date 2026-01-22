@@ -182,7 +182,7 @@ cd() {
         fi
     else
         builtin cd "$@"
-        cls
+        clear 
     fi
 
     # 2. Smart Recursive Venv Activation
