@@ -173,37 +173,46 @@ re_pip() {
 }
 
 cd() {
-    # 1. Smart Toggle Logic (VsCode in/out)
+    # 1. Smart Toggle & Directory Change Logic
     if [ -z "$1" ]; then
         if [ "$PWD" == "$HOME/VsCode" ]; then
-            builtin cd ~ && cls 
+            builtin cd ~ && cls
         else
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@" 
+        # Agar directory exist nahi karti toh yahi se bahar nikal jao
+        builtin cd "$@" || return
     fi
-    clear 
+
     # 2. Smart Recursive Venv Activation
-    # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
     local dir="$PWD"
+    local venv_found=false
+
     while [ "$dir" != "/" ]; do
         if [ -d "$dir/.venv" ]; then
             if [ "$VIRTUAL_ENV" != "$dir/.venv" ]; then
                 source "$dir/.venv/bin/activate"
             fi
-            clear
-            return # Venv mil gaya, kaam khatam
+            venv_found=true
+            break # Loop se bahar niklo
         fi
         dir=$(dirname "$dir")
     done
 
-    # 3. Agar kahin bhi .venv nahi mila, toh deactivate karo
-    if [ -n "$VIRTUAL_ENV" ]; then
+    # 3. Agar venv nahi mila toh deactivate karo
+    if [ "$venv_found" = false ] && [ -n "$VIRTUAL_ENV" ]; then
         deactivate
     fi
-    
+
+    # 4. FINAL CLEANUP (Ye har baar chalega!)
     clear
+    
+    # Visual Feedback
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo -e "${GREEN}🐍 Python Venv Active${NC}"
+    fi
+    echo -e "${CYAN}📂 Location: ${YELLOW}${PWD}${NC}"
 }
 
 # Aur bhi behtar version (jisme tu message de sake):
