@@ -242,7 +242,8 @@ list() {
     echo -e "\033[0m"
     echo -e "\033[1;32m\t\t\t\t  piplist  \033[0m : Python & Pip Shortcuts"
     echo -e "\033[1;32m\t\t\t\t  gitlist  \033[0m : Git & GitHub Automation"
-    echo -e "\033[1;32m\t\t\t\t  syslist  \033[0m : System & Config Tools"
+    echo -e "\033[1;32m\t\t\t\t  syslist  \033[0m : System & Config Tools" 
+    echo -e "\033[1;32m\t\t\t\t  autolist \033[0m : Automation & Workflow Tools"
     echo -e "\t\t\t\t"
     echo -e "\033[1;33m\t\t\t\t===============================================\033[0m"
 }
@@ -252,12 +253,10 @@ piplist() {
     clear
     echo -e "\033[1;35m\t\t\t\t📦 PYTHON & PIP DASHBOARD\033[0m"
     echo -e "\t\t\t\t-----------------------------------------------"
-    echo -e "\t\t\t\t  py       : Run Python3"
     echo -e "\t\t\t\t  in_pip   : Install package"
     echo -e "\t\t\t\t  up_pip   : Upgrade package"
     echo -e "\t\t\t\t  re_pip   : Install from requirements.txt"
     echo -e "\t\t\t\t  un_pip   : Uninstall package"
-    echo -e "\t\t\t\t  venv     : Create Virtual Env (.venv)"
     echo -e "\t\t\t\t-----------------------------------------------"
     echo -ne "\t\t\t\t\n Enter to return to Master Menu..."
     read && list
@@ -281,14 +280,25 @@ syslist() {
     clear
     echo -e "\033[1;32m\t\t\t\t🖥️  SYSTEM DASHBOARD\033[0m"
     echo -e "\t\t\t\t-----------------------------------------------"
-    echo -e "\t\t\t\t  cls       : Clear Screen"
-    echo -e "\t\t\t\t  tc        : Create .py file with Boilerplate & Open VS Code"
     echo -e "\t\t\t\t  checkup   : Check CPU, RAM & Disk"
     echo -e "\t\t\t\t  pyclean   : Clean Python __pycache__"
-    echo -e "\t\t\t\t  mkcd      : Make Directory & Change into it"
     echo -e "\t\t\t\t  config    : Edit .bashrc in VSCode"
     echo -e "\t\t\t\t  refresh   : Source .bashrc & Sync"
     echo -e "\t\t\t\t  sysupdate : System Update (sudo apt)"
+    echo -e "\t\t\t\t-----------------------------------------------"
+    echo -ne "\t\t\t\t\n Press Enter to return to Master Menu..."
+    read && list
+}
+
+# 5. Automation & Workflow Tools List
+autolist() {
+    clear
+    echo -e "\033[1;33m\t\t\t\t⚙️  AUTOMATION & WORKFLOW TOOLS\033[0m"
+    echo -e "\t\t\t\t-----------------------------------------------"
+    echo -e "\t\t\t\t  tc       : Create & Open file in VSCode"
+    echo -e "\t\t\t\t  mkcd     : Make Directory and Enter it"
+    echo -e "\t\t\t\t  venv     : Create Python Virtual Env"
+    echo -e "\t\t\t\t  cls       : Clear Screen"
     echo -e "\t\t\t\t-----------------------------------------------"
     echo -ne "\t\t\t\t\n Press Enter to return to Master Menu..."
     read && list
