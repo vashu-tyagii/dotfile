@@ -125,16 +125,52 @@ alias cls='clear' # Clear screen shortcut
 alias config='code ~/dotfile/.bashrc_final' # Edit bashrc in VSCode
 alias py='_py(){ clear && python3 "$1"; }; _py' # Run Python file and clear screen
 alias pip='pip3'
-alias in_pip='pip3 install'        # Example: in_pip requests
-alias up_pip='pip3 install -U'     # -U is short for --upgrade
-alias re_pip='pip3 install -r requirements.txt' 
-alias un_pip='pip3 uninstall -y -r requirements.txt' # Fixed name to 'un' for uninstall
 alias venv='python3 -m venv .venv'
 alias gs='git status'
 alias gl='git log --oneline --graph --all --decorate'
 alias tc='_tc(){ touch "$1" && code "$1"; }; _tc' # Create & open file in VSCode
 
 # Smart Toggle CD: VsCode in/out with one command
+
+# --- Smart Post-Cleanup Pip Suite ---
+
+# 1. Install packages and clear ONLY on success
+in_pip() {
+    echo -e "${CYAN}🚀 Installing: ${YELLOW}$*${NC}..."
+    if pip3 install "$@"; then
+        clear
+        echo -e "${GREEN}✅ Installation Finished & Terminal Cleared!${NC}"
+        sleep 2
+    else
+        echo -e "${RED}❌ Installation Failed! Check errors above.${NC}"
+    fi
+}
+
+# 2. Upgrade packages and clear
+up_pip() {
+    echo -e "${CYAN}🔄 Upgrading: ${YELLOW}$*${NC}..."
+    if pip3 install -U "$@"; then
+        clear
+        echo -e "${GREEN}✅ Upgrade Finished & Terminal Cleared!${NC}"
+        sleep 2
+    else
+        echo -e "${RED}❌ Upgrade Failed!${NC}"
+    fi
+}
+
+# 3. Requirements install and clear
+re_pip() {
+    if [ -f "requirements.txt" ]; then
+        echo -e "${CYAN}📄 Installing from requirements.txt...${NC}"
+        if pip3 install -r requirements.txt; then
+            clear
+            echo -e "${GREEN}✅ Requirements Installed & Terminal Cleared!${NC}"
+            sleep 2
+        fi
+    else
+        echo -e "${RED}❌ Error: requirements.txt not found!${NC}"
+    fi
+}
 
 cd() {
     # 1. Smart Toggle Logic (VsCode in/out)
@@ -145,7 +181,7 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@"
+        builtin cd "$@" && cls
     fi
 
     # 2. Smart Recursive Venv Activation
