@@ -140,9 +140,9 @@ cd() {
     # 1. Smart Toggle Logic (VsCode in/out)
     if [ -z "$1" ]; then
         if [ "$PWD" == "$HOME/VsCode" ]; then
-            builtin cd ~
+            builtin cd ~ && cls 
         else
-            builtin cd ~/VsCode
+            builtin cd ~/VsCode && cls
         fi
     else
         builtin cd "$@"
