@@ -185,11 +185,7 @@ gp() {
 
 # System Update Function
 sysupdate() {
-   sudo apt update && sudo apt upgrade -y && cls &&  echo -e "\033[1;34mSystem Updated Successfully!\033[0m"
-
-    # ---  INTERACTIVE PART ---
-    echo -n "Press Enter to clear screen and continue..."
-    read  # Yeh line wait karegi jab tak tu Enter nahi dabata
+   sudo apt update && sudo apt upgrade -y && cls 
     cls   # Enter dabate hi screen saaf
 }
 
