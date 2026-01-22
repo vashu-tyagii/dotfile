@@ -182,7 +182,6 @@ cd() {
         fi
     else
         builtin cd "$@" 
-        do cls 
     fi
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
