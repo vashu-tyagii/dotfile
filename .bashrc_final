@@ -138,9 +138,9 @@ alias tc='_tc(){ touch "$1" && code "$1" && cls; }; _tc' # Create & open file in
 in_pip() {
     echo -e "${CYAN}🚀 Installing: ${YELLOW}$*${NC}..."
     if pip3 install "$@"; then
-        clear
         echo -e "${GREEN}✅ Installation Finished & Terminal Cleared!${NC}"
         sleep 2
+        clear
     else
         echo -e "${RED}❌ Installation Failed! Check errors above.${NC}"
     fi
@@ -150,9 +150,9 @@ in_pip() {
 up_pip() {
     echo -e "${CYAN}🔄 Upgrading: ${YELLOW}$*${NC}..."
     if pip3 install -U "$@"; then
-        clear
         echo -e "${GREEN}✅ Upgrade Finished & Terminal Cleared!${NC}"
         sleep 2
+        clear
     else
         echo -e "${RED}❌ Upgrade Failed!${NC}"
     fi
@@ -163,9 +163,9 @@ re_pip() {
     if [ -f "requirements.txt" ]; then
         echo -e "${CYAN}📄 Installing from requirements.txt...${NC}"
         if pip3 install -r requirements.txt; then
-            clear
             echo -e "${GREEN}✅ Requirements Installed & Terminal Cleared!${NC}"
             sleep 2
+            clear
         fi
     else
         echo -e "${RED}❌ Error: requirements.txt not found!${NC}"
@@ -181,7 +181,7 @@ cd() {
             builtin cd ~/VsCode && cls
         fi
     else
-        builtin cd "$@" 
+        builtin cd "$1" && cls && clear 
     fi
     # 2. Smart Recursive Venv Activation
     # Ye tab tak upar dekhega jab tak .venv na mil jaye ya Root tak na pahunch jaye
