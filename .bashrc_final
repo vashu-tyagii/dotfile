@@ -123,7 +123,7 @@ export PS1="\[\e[32m\]\u\[\e[m\]@linux: \[\e[33m\]\W\[\e[m\]  "
 
 alias cls='clear' # Clear screen shortcut
 alias config='code ~/dotfile/.bashrc_final && cls' # Edit bashrc in VSCode
-alias py='_py(){ clear && python3 "$1"; }; _py' # Run Python file and clear screen
+alias py='_py(){ clear && python3.12 "$1"; }; _py' # Run Python file and clear screen
 alias pip='pip3'
 alias venv='python3 -m venv .venv && cls' # Create Python Virtual Env and clear
 alias gs='git status'
