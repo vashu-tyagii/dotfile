@@ -2,27 +2,22 @@
             DOTFILES DEPLOYMENT GUIDE
 =====================================================
 
-STEP 1: REPO CLONE KARO
------------------------
-Naye laptop par sabse pehle apni repo clone karo:
-git clone <TERI_GITHUB_URL> ~/dotfile
-
-STEP 2: PURANA KACHRA SAAF KARO
+STEP 1: PURANA KACHRA SAAF KARO
 ------------------------------
 Home folder ki default file hatao taaki link ban sake:
 rm ~/.bashrc
 
-STEP 3: SYMLINK (PORTAL) BANAYEIN
+STEP 2: SYMLINK (PORTAL) BANAYEIN
 ---------------------------------
 Is command se teri repo wali file system se jud jayegi:
 ln -s ~/dotfile/.bashrc_final ~/.bashrc
 
-STEP 4: SETTINGS APPLY KARO
+STEP 3: SETTINGS APPLY KARO
 ---------------------------
 Terminal refresh karne ke liye:
 source ~/.bashrc
 
-STEP 5: VERIFICATION
+STEP 4: VERIFICATION
 --------------------
 - 'cls' chala kar dekho (Screen saaf honi chahiye)
 - 'gp' chalao (Git automation check)
