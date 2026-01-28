@@ -176,7 +176,7 @@ cd() {
     # 1. Smart Toggle Logic (VsCode in/out)
     if [ -z "$1" ]; then
         if [ "$PWD" == "$HOME/VsCode" ]; then
-            builtin cd ~ && cls 
+            builtin cd  && cls 
         else
             builtin cd ~/VsCode && cls
         fi
