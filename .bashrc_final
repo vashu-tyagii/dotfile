@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # Professional Clean Prompt
-export PS1="\[\e[32m\]\u\[\e[m\]@linux $ \[\e[33m\]\W\[\e[m\] ~ "
+export PS1="\[\e[32m\]\u\[\e[m\]@linux: \[\e[33m\]\W\[\e[m\] \$ "
 
 #================= Custom Aliases and Functions =================#
 
