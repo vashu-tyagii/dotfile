@@ -1,0 +1,26 @@
+=====================================================
+            DOTFILES DEPLOYMENT GUIDE
+=====================================================
+
+STEP 1: PURANA KACHRA SAAF KARO
+------------------------------
+Home folder ki default file hatao taaki link ban sake:
+rm ~/.bashrc
+
+STEP 2: SYMLINK (PORTAL) BANAYEIN
+---------------------------------
+Is command se teri repo wali file system se jud jayegi:
+ln -s ~/dotfile/.bashrc_final ~/.bashrc
+
+STEP 3: SETTINGS APPLY KARO
+---------------------------
+Terminal refresh karne ke liye:
+source ~/.bashrc
+
+STEP 4: VERIFICATION
+--------------------
+- 'cls' chala kar dekho (Screen saaf honi chahiye)
+- 'gp' chalao (Git automation check)
+- 'checkup' chalao (System health check)
+
+=====================================================
