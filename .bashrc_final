@@ -131,6 +131,9 @@ alias kuch_aur='...'
 alias gl='git log --oneline --graph --all --decorate'
 alias tc='_tc(){ touch "$1" && code "$1" && cls; }; _tc' # Create & open file in VSCode
 alias un_pip='uv pip uninstall -y' # Uninstall package without confirmation via uv
+alias gs='git status'
+alias gd='git diff'
+
 
 # Smart Toggle CD: VsCode in/out with one command
 
@@ -370,6 +373,11 @@ Whichdb() {
     else
         echo "Current DB: $CURRENT_DB  |  Location: Windows (Host: $CURRENT_DB_HOST)"
     fi
+}
+
+gk() {
+    find . -type d -empty -not -path "./.git/*" -exec touch {}/.gitkeep \;
+    echo "✅ .gitkeep files created in all empty directories."
 }
 
 # Wipe git history and start fresh with a single clean commit
