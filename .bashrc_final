@@ -270,7 +270,7 @@ Wsql() {
     clear
     local win_host="127.0.0.1"
     echo -e "\033[1;36mConnecting to Windows MySQL at ${win_host}...\033[0m"
-    mysql -h "$win_host" -u root -p
+    mysql -h "$win_host" -u root
 }
 
 db() {
@@ -282,7 +282,7 @@ db() {
 
     local db_name="$1"
     local win_host="127.0.0.1"
-    local host_flag="-h $win_host -u root -p"
+    local host_flag="-h $win_host -u root"
     local host_label="Windows @ $win_host"
 
     # Check if database exists
@@ -328,7 +328,7 @@ Runsql() {
     if [ -z "$CURRENT_DB_HOST" ]; then
         mysql -t "$CURRENT_DB" < "$1"
     else
-        mysql -t -h "$CURRENT_DB_HOST" -u root -p "$CURRENT_DB" < "$1"
+        mysql -t -h "$CURRENT_DB_HOST" -u root "$CURRENT_DB" < "$1"
     fi
 }
 
